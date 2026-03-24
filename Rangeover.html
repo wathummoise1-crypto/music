@@ -3,186 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Range Rover | The Ultimate Luxury SUV</title>
-    
+    <title>Range Rover | Luxury SUV</title>
     <style>
-        /* --- 4. Background Styling & 10. Aesthetics --- */
+        /* Requirement 4: Background Styling & 10: Aesthetics */
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1563200841-38294436791d?q=80&w=2000') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            color: #f5f5f5;
+            background-color: #f4f4f4;
+            color: #333;
             line-height: 1.6;
         }
 
-        /* --- 6. Menubar (At least 5 items) --- */
-        .navbar {
-            background-color: rgba(10, 10, 10, 0.95);
-            padding: 20px 0;
+        /* Requirement 6: Menu Bar (5 items) */
+        nav {
+            background: #004225; /* British Racing Green */
+            color: white;
+            padding: 1rem;
             position: sticky;
             top: 0;
-            border-bottom: 2px solid #c5a059;
             z-index: 1000;
         }
-        .navbar ul {
-            list-style: none;
+        nav ul {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            list-style: none;
             margin: 0;
-            padding: 0;
         }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-        .navbar a:hover { color: #c5a059; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; font-weight: bold; }
 
-        /* --- 1. Two Column Layout --- */
-        .main-content {
+        header {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Requirement 12: Container Styling */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Requirement 1: 2 Columns Layout */
+        .row {
             display: flex;
             flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 40px auto;
-            gap: 30px;
-            padding: 0 20px;
+            gap: 20px;
         }
-        .column { flex: 1; min-width: 350px; }
-
-        /* --- 12. Container Styling --- */
-        .text-container, .media-container {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .col {
+            flex: 1;
+            min-width: 300px;
         }
 
-        /* --- 3. Full Length Tables --- */
-        .full-table {
+        /* Requirement 2: Image/Video Containers */
+        .media-box {
+            border: 2px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Requirement 3: Full Length Tables */
+        table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: rgba(0,0,0,0.4);
         }
-        .full-table th, .full-table td {
-            border: 1px solid #444;
-            padding: 15px;
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
             text-align: left;
         }
-        .full-table th { background-color: #c5a059; color: #000; }
+        th { background-color: #004225; color: white; }
 
-        /* Media Handling */
-        img, iframe {
-            width: 100%;
-            border-radius: 8px;
-            border: none;
-            display: block;
-        }
-
-        /* --- 11. Footer --- */
+        /* Requirement 11: Footer */
         footer {
+            background: #1a1a1a;
+            color: white;
             text-align: center;
-            padding: 40px;
-            background: #000;
-            color: #777;
-            border-top: 1px solid #222;
+            padding: 20px;
+            margin-top: 40px;
         }
-
-        h1, h2, h3 { color: #c5a059; text-transform: uppercase; }
-        
-        /* 5. Nested List Styling */
-        .nested-list ul { color: #c5a059; padding-left: 20px; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Models</a></li>
-            <li><a href="#">Technology</a></li>
-            <li><a href="#">Ownership</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Models</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
 
-    <header style="text-align:center; padding: 60px 20px;">
-        <h1>Range Rover Experience</h1>
-        <p>Marks = Graded out of 50. Due on Week 11</p>
-    </header>
+<header>
+    <h1>RANGE ROVER</h1>
+    <p>The Pinnacle of Refinement and Capability</p>
+</header>
 
-    <main class="main-content">
-        <div class="column">
-            <div class="text-container">
-                <h2>Defining Modern Luxury</h2>
-                <p>1. The Range Rover is the ultimate expression of the Land Rover brand, combining peerless refinement with world-class capability.</p>
-                <p>2. Its modernist design is clean and reductive, creating a silhouette that is instantly recognizable across the globe.</p>
-                <p>3. Inside, the cabin serves as a quiet sanctuary, featuring high-quality sustainable materials and advanced noise cancellation.</p>
-                <p>4. Engineering excellence ensures that whether you are on a highway or a mountain pass, the ride remains composed and effortless.</p>
-                <p>5. With the latest Pivi Pro technology, every control is at your fingertips, making every journey connected and intuitive.</p>
+<div class="container">
+    <section>
+        <h2>Experience Luxury</h2>
+        <p>The Range Rover is the original luxury SUV, leading by example for decades. It combines peerless refinement with legendary off-road capability. Every detail is crafted to provide a calm sanctuary for all occupants.</p>
+        
+        <div class="row">
+            <div class="col">
+                <h3>Exterior Design</h3>
+                <p>With its falling roofline, strong waistline, and rising sill line, the Range Rover is recognized globally for its sophisticated profile.</p>
+                
+                <div class="media-box">
+                    <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=500" alt="Range Rover Front">
+                    <p><em>Iconic Silhouette</em></p>
+                </div>
+                <div class="media-box">
+                    <img src="https://images.unsplash.com/photo-1606148429002-194fd8f4ba48?auto=format&fit=crop&w=500" alt="Range Rover Grill">
+                    <p><em>Attention to Detail</em></p>
+                </div>
             </div>
 
-            <h3>Technical Specifications</h3>
-            <table class="full-table">
-                <tr><th>Feature</th><th>V8 Engine</th><th>Plug-in Hybrid</th></tr>
-                <tr><td>Horsepower</td><td>523 HP</td><td>434 HP</td></tr>
-                <tr><td>0-60 mph</td><td>4.4 Seconds</td><td>5.7 Seconds</td></tr>
-            </table>
-
-            <table class="full-table">
-                <tr><th>Capability</th><th>Standard</th><th>Off-Road Mode</th></tr>
-                <tr><td>Wading Depth</td><td>900mm</td><td>900mm</td></tr>
-                <tr><td>Ground Clearance</td><td>219mm</td><td>295mm</td></tr>
-            </table>
-        </div>
-
-        <div class="column">
-            <div class="text-container">
-                <h3>Core Brand Pillars</h3>
-                <ul class="nested-list">
-                    <li>Design Excellence
-                        <ul><li>Floating Roofline</li><li>Flush Glazing</li></ul>
+            <div class="col">
+                <h3>Interior Comfort</h3>
+                <p>The interior is a modern interpretation of luxury, featuring sustainable materials and the latest Pivi Pro infotainment system.</p>
+                
+                <ul>
+                    <li>Standard Features
+                        <ul>
+                            <li>Executive Class Rear Seating</li>
+                            <li>Meridian Sound System</li>
+                            <li>Four-zone Climate Control</li>
+                            <li>Heated Steering Wheel</li>
+                            <li>Ambient Interior Lighting</li>
+                        </ul>
                     </li>
-                    <li>Peerless Capability</li>
-                    <li>True Refinement</li>
-                    <li>Modern Luxury</li>
-                    <li>Electric Future</li>
                 </ul>
+
+                <div class="media-box">
+                    <video controls poster="https://via.placeholder.com/500x280?text=Range+Rover+Performance">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p><em>Performance Overview</em></p>
+                </div>
             </div>
-
-            <h3>Range Rover Gallery</h3>
-            <div class="media-container"><img src="https://images.unsplash.com/photo-1606148006006-25912423011a?auto=format&fit=crop&w=800&q=80" alt="RR 1"></div>
-            <div class="media-container"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="RR 2"></div>
-            <div class="media-container"><img src="https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=800&q=80" alt="RR 3"></div>
-            <div class="media-container"><img src="https://images.unsplash.com/photo-1563200841-38294436791d?auto=format&fit=crop&w=800&q=80" alt="RR 4"></div>
-            <div class="media-container"><img src="https://images.unsplash.com/photo-1550186193-4a8738547240?auto=format&fit=crop&w=800&q=80" alt="RR 5"></div>
-        </div>
-    </main>
-
-    <section class="main-content" style="display:block;">
-        <h3 style="text-align:center;">Cinematic Showcase</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/SBQlKwZnIFA"></iframe></div>
-            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/_4wTYN7twPA"></iframe></div>
-            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/BnibyWuoVLQ"></iframe></div>
-            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/neCxznaR8-k"></iframe></div>
-            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/QU32Wpk8v3w"></iframe></div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Range Rover projet made by moise wathum 25-0791.</p>
-        <p>7. Minimum of 5 pages total (Website Structure Ready)</p>
-    </footer>
+    <hr>
+
+    <section>
+        <h2>Technical Specifications</h2>
+        <table>
+            <tr>
+                <th>Engine Type</th>
+                <th>Horsepower</th>
+                <th>0-60 mph</th>
+                <th>Top Speed</th>
+            </tr>
+            <tr>
+                <td>P400 MHEV</td>
+                <td>395 hp</td>
+                <td>5.5s</td>
+                <td>150 mph</td>
+            </tr>
+            <tr>
+                <td>P530 V8</td>
+                <td>523 hp</td>
+                <td>4.4s</td>
+                <td>155 mph</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Sustainability Efforts</h3>
+        <p>Our commitment to a sustainable future is evident in the choice of interior textiles. We offer Kvadrat premium wool blends that provide a luxurious alternative to leather.</p>
+        
+        <h3>Unrivaled Capability</h3>
+        <p>With Terrain Response 2, the vehicle automatically adjusts to the driving conditions. Whether it's sand, snow, or mud, the Range Rover remains composed and in control.</p>
+        
+        <h3>Advanced Technology</h3>
+        <p>The 13.1-inch floating glass touchscreen provides intuitive control over all vehicle functions. Over-the-air updates ensure your vehicle is always current.</p>
+        
+        <h3>Your Bespoke Range Rover</h3>
+        <p>Through the SV Bespoke service, you can personalize your vehicle with unique colors, materials, and finishes to reflect your personal style.</p>
+    </section>
+
+    <section>
+        <h2>Available Models</h2>
+        <table>
+            <tr>
+                <th>Trim Level</th>
+                <th>Wheelbase</th>
+                <th>Starting Price</th>
+            </tr>
+            <tr>
+                <td>SE</td>
+                <td>Standard / Long</td>
+                <td>$107,400</td>
+            </tr>
+            <tr>
+                <td>Autobiography</td>
+                <td>Standard / Long</td>
+                <td>$141,100</td>
+            </tr>
+            <tr>
+                <td>SV</td>
+                <td>Standard / Long</td>
+                <td>$209,000</td>
+            </tr>
+        </table>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Range Rover Enthusiast Project made by moise wathum 25-0791</p>
+</footer>
 
 </body>
 </html>
