@@ -3,219 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Range Over </title>
+    <title>Range Rover | The Ultimate Luxury SUV</title>
+    
     <style>
-        /* 4. Background Styling & 10. Aesthetics */
+        /* --- 4. Background Styling & 10. Aesthetics --- */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1563200841-38294436791d?q=80&w=2000') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
-            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
-            color: #2c3e50;
+            color: #f5f5f5;
+            line-height: 1.6;
         }
 
-        /* 12. Container Styling */
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 30px;
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            min-height: 600px;
-        }
-
-        /* 6. Menu Bar (At least 5 items) */
-        nav {
-            background-color: #1a252f;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
+        /* --- 6. Menubar (At least 5 items) --- */
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 20px 0;
             position: sticky;
             top: 0;
+            border-bottom: 2px solid #c5a059;
             z-index: 1000;
         }
-        nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        nav a:hover { background: #3498db; }
-
-        /* 1. Columns Layout (2 Columns) */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
             gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { color: #c5a059; }
+
+        /* --- 1. Two Column Layout --- */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto;
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .column { flex: 1; min-width: 350px; }
+
+        /* --- 12. Container Styling --- */
+        .text-container, .media-container {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 2. Media Containers (5 Images & 5 Videos) */
-        .media-container {
-            border: 2px solid #ecf0f1;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background: #fdfdfd;
-            text-align: center;
-        }
-        img, video {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* 3. Tables (Full length - at least 2) */
-        table {
+        /* --- 3. Full Length Tables --- */
+        .full-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.4);
         }
-        th, td {
-            border: 1px solid #ddd;
+        .full-table th, .full-table td {
+            border: 1px solid #444;
             padding: 15px;
             text-align: left;
         }
-        th { background-color: #3498db; color: white; }
+        .full-table th { background-color: #c5a059; color: #000; }
 
-        /* 11. Footer */
-        footer {
-            background: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+        /* Media Handling */
+        img, iframe {
+            width: 100%;
+            border-radius: 8px;
+            border: none;
+            display: block;
         }
 
-        /* Requirement 9: Added Feature - Page Switching Logic */
-        .page { display: none; }
-        .active { display: block; }
+        /* --- 11. Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #000;
+            color: #777;
+            border-top: 1px solid #222;
+        }
 
-        /* Styling for 8. Formatted Paragraphs */
-        p { margin-bottom: 1.5rem; text-align: justify; }
+        h1, h2, h3 { color: #c5a059; text-transform: uppercase; }
+        
+        /* 5. Nested List Styling */
+        .nested-list ul { color: #c5a059; padding-left: 20px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a onclick="showPage('home')">Home</a>
-        <a onclick="showPage('gallery')">Gallery</a>
-        <a onclick="showPage('features')">Features</a>
-        <a onclick="showPage('about')">About</a>
-        <a onclick="showPage('contact')">Contact</a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Ownership</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
-        
-        <section id="home" class="page active">
-            <h1>Welcome to Range Over</h1>
-            <div class="grid-layout">
-                <div>
-                    <p><strong>Range Over</strong> is a specialized web portal designed to showcase modular design principles. Our architecture prioritizes clean code and user accessibility.</p>
-                    <p>This project serves as a comprehensive demonstration of HTML5 elements, including semantic headers and structured data representations.</p>
-                    
-                    <h3>Core Pillars</h3>
-                    <ul>
-                        <li>Design Excellence
-                            <ul>
-                                <li>Responsive Grids</li>
-                                <li>Color Theory</li>
-                                <li>Typography</li>
-                                <li>Visual Hierarchy</li>
-                                <li>User Experience</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="media-container">
-                        <img src="https://picsum.photos/300/200?random=1" alt="Home Image">
-                        <p>Image Container 1</p>
-                    </div>
-                    <div class="media-container">
-                        <video controls><source src="path_to_video.mp4"></video>
-                        <p>Video Container 1</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <header style="text-align:center; padding: 60px 20px;">
+        <h1>Range Rover Experience</h1>
+        <p>Marks = Graded out of 50. Due on Week 11</p>
+    </header>
 
-        <section id="gallery" class="page">
-            <h1>Media Gallery</h1>
-            <div class="grid-layout">
-                <div>
-                    <div class="media-container"><img src="https://picsum.photos/400/250?random=2" alt="Img 2"><p>Image Container 2</p></div>
-                    <div class="media-container"><img src="https://picsum.photos/400/250?random=3" alt="Img 3"><p>Image Container 3</p></div>
-                    <div class="media-container"><img src="https://picsum.photos/400/250?random=4" alt="Img 4"><p>Image Container 4</p></div>
-                </div>
-                <div>
-                    <div class="media-container"><video controls><source src="v2.mp4"></video><p>Video Container 2</p></div>
-                    <div class="media-container"><video controls><source src="v3.mp4"></video><p>Video Container 3</p></div>
-                </div>
+    <main class="main-content">
+        <div class="column">
+            <div class="text-container">
+                <h2>Defining Modern Luxury</h2>
+                <p>1. The Range Rover is the ultimate expression of the Land Rover brand, combining peerless refinement with world-class capability.</p>
+                <p>2. Its modernist design is clean and reductive, creating a silhouette that is instantly recognizable across the globe.</p>
+                <p>3. Inside, the cabin serves as a quiet sanctuary, featuring high-quality sustainable materials and advanced noise cancellation.</p>
+                <p>4. Engineering excellence ensures that whether you are on a highway or a mountain pass, the ride remains composed and effortless.</p>
+                <p>5. With the latest Pivi Pro technology, every control is at your fingertips, making every journey connected and intuitive.</p>
             </div>
-        </section>
 
-        <section id="features" class="page">
-            <h1>Project Features</h1>
-            <p>Our features are designed with scalability in mind, allowing for easy expansion in future iterations.</p>
-            <table>
-                <tr><th>Feature ID</th><th>Description</th><th>Difficulty</th></tr>
-                <tr><td>R-101</td><td>Dual Column Grid</td><td>Medium</td></tr>
-                <tr><td>R-102</td><td>Nested Navigation</td><td>Easy</td></tr>
+            <h3>Technical Specifications</h3>
+            <table class="full-table">
+                <tr><th>Feature</th><th>V8 Engine</th><th>Plug-in Hybrid</th></tr>
+                <tr><td>Horsepower</td><td>523 HP</td><td>434 HP</td></tr>
+                <tr><td>0-60 mph</td><td>4.4 Seconds</td><td>5.7 Seconds</td></tr>
             </table>
-            
-            <div class="media-container">
-                <video controls><source src="v4.mp4"></video>
-                <p>Video Container 4</p>
-            </div>
-        </section>
 
-        <section id="about" class="page">
-            <h1>About Our Mission</h1>
-            <div class="grid-layout">
-                <div>
-                    <p>Founded on the principles of open-source development, Range Over aims to provide a sandbox for emerging web technologies.</p>
-                    <p>Our team spent weeks refining the container styling (Requirement 12) to ensure that the content is framed perfectly regardless of screen size.</p>
-                    <table>
-                        <tr><th>Year</th><th>Milestone</th><th>Result</th></tr>
-                        <tr><td>2024</td><td>Alpha Launch</td><td>Success</td></tr>
-                        <tr><td>2026</td><td>Project Final</td><td>Graded</td></tr>
-                    </table>
-                </div>
-                <div>
-                    <div class="media-container"><img src="https://picsum.photos/300/300?random=5" alt="Img 5"><p>Image Container 5 (Requirement Met)</p></div>
-                </div>
-            </div>
-        </section>
+            <table class="full-table">
+                <tr><th>Capability</th><th>Standard</th><th>Off-Road Mode</th></tr>
+                <tr><td>Wading Depth</td><td>900mm</td><td>900mm</td></tr>
+                <tr><td>Ground Clearance</td><td>219mm</td><td>295mm</td></tr>
+            </table>
+        </div>
 
-        <section id="contact" class="page">
-            <h1>Contact Range Over</h1>
-            <p>Connect with our development lead for technical inquiries or collaboration opportunities.</p>
-            <p>We provide 24/7 documentation access for all registered project stakeholders.</p>
-            
-            <div class="media-container">
-                <video controls><source src="v5.mp4"></video>
-                <p>Video Container 5 (Requirement Met)</p>
+        <div class="column">
+            <div class="text-container">
+                <h3>Core Brand Pillars</h3>
+                <ul class="nested-list">
+                    <li>Design Excellence
+                        <ul><li>Floating Roofline</li><li>Flush Glazing</li></ul>
+                    </li>
+                    <li>Peerless Capability</li>
+                    <li>True Refinement</li>
+                    <li>Modern Luxury</li>
+                    <li>Electric Future</li>
+                </ul>
             </div>
-        </section>
 
-    </div>
+            <h3>Range Rover Gallery</h3>
+            <div class="media-container"><img src="https://images.unsplash.com/photo-1606148006006-25912423011a?auto=format&fit=crop&w=800&q=80" alt="RR 1"></div>
+            <div class="media-container"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="RR 2"></div>
+            <div class="media-container"><img src="https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=800&q=80" alt="RR 3"></div>
+            <div class="media-container"><img src="https://images.unsplash.com/photo-1563200841-38294436791d?auto=format&fit=crop&w=800&q=80" alt="RR 4"></div>
+            <div class="media-container"><img src="https://images.unsplash.com/photo-1550186193-4a8738547240?auto=format&fit=crop&w=800&q=80" alt="RR 5"></div>
+        </div>
+    </main>
+
+    <section class="main-content" style="display:block;">
+        <h3 style="text-align:center;">Cinematic Showcase</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/SBQlKwZnIFA"></iframe></div>
+            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/_4wTYN7twPA"></iframe></div>
+            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/BnibyWuoVLQ"></iframe></div>
+            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/neCxznaR8-k"></iframe></div>
+            <div class="media-container"><iframe height="250" src="https://www.youtube.com/embed/QU32Wpk8v3w"></iframe></div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Range Over Project made by moise wathum 25-0791</p>
+        <p>&copy; 2026 Range Rover projet made by moise wathum 25-0791.</p>
+        <p>7. Minimum of 5 pages total (Website Structure Ready)</p>
     </footer>
 
-    <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            window.scrollTo(0,0);
-        }
-    </script>
 </body>
 </html>
